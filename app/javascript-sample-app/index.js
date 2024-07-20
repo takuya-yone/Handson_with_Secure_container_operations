@@ -18,7 +18,7 @@
 
 const sdk = require("./nodeSDK");
 
-// config
+// config あああ
 const create_cfg = require('./config');
 const cfg = create_cfg.create_config('./config.yaml');
 
@@ -42,12 +42,12 @@ sdk.nodeSDKBuilder()
         }, cfg.TimeInterval * 1000);
     });
 
-function validateSampleAppPorts () {
+function validateSampleAppPorts() {
     // validate SampleAppPorts provided in config
     if (cfg.SampleAppPorts.length > 0) {
         for (let i = 0; i < cfg.SampleAppPorts.length; i++) {
             let port = cfg.SampleAppPorts[i];
-            if(isNaN(port) || port < 0 || port > 65535) {
+            if (isNaN(port) || port < 0 || port > 65535) {
                 throw new Error(`SampleAppPorts is not a valid configuration!`);
             }
         }
